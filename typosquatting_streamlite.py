@@ -6,13 +6,13 @@ API_KEY = '0e4df75413670efa7ad17aae13bcbb553cd47ed08d472342e867bec9fb178211'
 
 def check_domain(domain):
     url = f'https://www.virustotal.com/api/v3/domains/{domain}'
-    headers = {'x-apikey': API_KEY}
+headers = {
+    "accept": "application/json",
+    "x-apikey": "0e4df75413670efa7ad17aae13bcbb553cd47ed08d472342e867bec9fb178211"
     response = requests.get(url, headers=headers)
-    if response.status_code == 200:
         data = response.json()['data']
-    else:
-        return None
-
+        response = requests.get(url, headers=headers)
+print(response.text)
 st.title('Typosquatting Checker')
 
 domain = st.text_input('Enter a domain name')
