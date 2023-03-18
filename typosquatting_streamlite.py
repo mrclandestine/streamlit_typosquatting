@@ -28,7 +28,6 @@ else:
         # Display domain report
         report = response.json()
         st.write(f"**Domain**: {report['data']['id']}")
-        st.write(f"**Owner**: {report['data']['attributes']['owner']}")
         st.write(f"**Categories**: {', '.join(report['data']['attributes']['categories'])}")
         st.write(f"**Last analysis date**: {report['data']['attributes']['last_analysis_date']}")
         st.write(f"**Detected URLs**: {report['data']['attributes']['url_count']['detected']}")
