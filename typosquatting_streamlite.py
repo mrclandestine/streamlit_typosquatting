@@ -10,11 +10,6 @@ def check_domain(domain):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         data = response.json()['data']
-        return {
-            'domain': data['attributes']['last_analysis_stats']['harmless']['count'],
-            'typosquatting': data['attributes']['last_analysis_stats']['suspicious']['count'],
-            'malicious': data['attributes']['last_analysis_stats']['malicious']['count']
-        }
     else:
         return None
 
