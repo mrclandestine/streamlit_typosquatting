@@ -26,10 +26,7 @@ else:
     # Check if response is successful
     if response.status_code == 200:
         # Display domain report
-        report = response.json()
-        st.write(f"**Domain**: {report['data']['id']}")
-        st.write(f"**Categories**: {', '.join(report['data']['attributes']['categories'])}")
-        st.write(f"**Last analysis date**: {report['data']['attributes']['last_analysis_date']}")
+        print(response.text)
     elif response.status_code == 404:
         st.warning("Domain not found on VirusTotal")
     else:
