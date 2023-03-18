@@ -30,7 +30,6 @@ else:
         st.write(f"**Domain**: {report['data']['id']}")
         st.write(f"**Categories**: {', '.join(report['data']['attributes']['categories'])}")
         st.write(f"**Last analysis date**: {report['data']['attributes']['last_analysis_date']}")
-        st.write(f"**Detected URLs**: {report['data']['attributes']['url_count']['detected']}")
         st.write(f"**Undetected URLs**: {report['data']['attributes']['url_count']['undetected']}")
     elif response.status_code == 404:
         st.warning("Domain not found on VirusTotal")
